@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = express.Router();
-const contactController = require('../controllers/contacts');
+const contactController = require('../controllers/list');
 
 /*
 constswaggerAutogen = require('swagger-autogen');
@@ -14,8 +14,8 @@ routes.get('/', (req, res) => {
 
 
 //routes.get('/contacts');
-routes.use('/', require('./swagger'));
-routes.use('/contacts', require('./contacts'));
+// -------routes.use('/', require('./swagger'));
+routes.use('/list', require('./list'));
 
 /****************added for doc */
 routes.use(
