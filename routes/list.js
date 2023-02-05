@@ -3,12 +3,12 @@ const router = express.Router();
 
 const listRoute = require('../controllers/list');
 
-//get all contacts 
+//get list all
 router.get('/', listRoute.getallList);
 
 //get user info by id
 router.get('/:id', listRoute.getOneId);
-//added
+
 
 
 

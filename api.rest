@@ -2,4 +2,4 @@
 GET http://localhost:3000/list
 
 ### 
-GET http://localhost:3000/list/
+GET http://localhost:3000/list/63ddfc20cbde21ce9d9e0ca0

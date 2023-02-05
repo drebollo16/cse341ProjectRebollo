@@ -1,4 +1,21 @@
 {
+    "name": "cse341projectrebollo",
+    "description": "code for personal project",
+    "version": "1.0.0",
+    "main": "server.js",
+    "devDependencies": {
+        "mocha": "^2.5.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/drebollo16/cse341ProjectRebollo.git"
+    },
+    "author": "Denise Rebollo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/drebollo16/cse341ProjectRebollo/issues"
+    },
+    "homepage": "https://github.com/drebollo16/cse341ProjectRebollo#readme",
     "dependencies": {
         "body-parser": "^1.20.1",
         "cors": "^2.8.5",
@@ -16,22 +33,5 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
         "dev_start": "nodemon server.js"
-    },
-    "name": "cse341projectrebollo",
-    "description": "code for person project",
-    "version": "1.0.0",
-    "main": "server.js",
-    "devDependencies": {
-        "mocha": "^2.5.3"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/drebollo16/cse341ProjectRebollo.git"
-    },
-    "author": "Denise Rebollo",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/drebollo16/cse341ProjectRebollo/issues"
-    },
-    "homepage": "https://github.com/drebollo16/cse341ProjectRebollo#readme"
+    }
 }
