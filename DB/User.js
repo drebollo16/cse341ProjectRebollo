@@ -25,6 +25,3 @@ const list = new Schema({
 
 
 module.exports = User = mongoose.model('User', list);
-
-
-//module.exports = userId = mongoose.model('UserId', userId);
