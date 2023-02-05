@@ -3,3 +3,13 @@ GET http://localhost:3000/list
 
 ### 
 GET http://localhost:3000/list/63ddfc20cbde21ce9d9e0ca0
+
+
+
+// RENDER
+
+###
+GET https://cserebolloproject.onrender.com/list 
+
+###
+GET https://cserebolloproject.onrender.com/list/63ddfc20cbde21ce9d9e0ca0
