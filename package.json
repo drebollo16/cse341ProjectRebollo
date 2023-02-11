@@ -26,6 +26,7 @@
         "monodb": "^1.5.1",
         "nodemon": "^2.0.20",
         "swagger": "^0.7.5",
+        "swagger-autogen": "^2.23.1",
         "swagger-ui-express": "^4.6.0"
     },
     "scripts": {
