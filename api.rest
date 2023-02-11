@@ -4,8 +4,16 @@ GET http://localhost:3000/list
 ### 
 GET http://localhost:3000/list/63ddfc20cbde21ce9d9e0ca0
 
-
-
+### 
+POST http://localhost:3000/
+{
+"fullName": "ELENAMARIA",
+"city": "Denver", 
+"state": "Colorado",
+"task": "organizing",
+"date": "03/25/2022",
+"listToDo": "business applications, work, lunch date"
+}
 // RENDER
 
 ###
