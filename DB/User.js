@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const error = new Error("An error message");
-console.log(error.stack);
 
 
 const list = new Schema({
