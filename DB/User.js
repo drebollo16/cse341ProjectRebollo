@@ -26,5 +26,5 @@ const schema = new Schema({
 
 
 
-
-module.exports = User = mongoose.model('Project', schema);
+// names your model in mongodb exports it
+module.exports = User = mongoose.model('user', schema);

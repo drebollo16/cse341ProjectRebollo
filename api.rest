@@ -9,17 +9,18 @@ POST http://localhost:3000/list HTTP/1.1
 Content-Type: application/json
 
 {
-"fullName": "Denise Rebollo",
+"fullName": "Alfredo Rebollo",
 "city": "Albuquerque", 
 "state": "New Mexico",
 "task": "Work",
-"date": "02/10/2022",
-"listToDo": "Clean, restroom, trash, homework"
+"date": "02/11/2022",
+"listToDo": "Tire changes, break check, trailer lights"
 }
 // RENDER
 
-
-
+//UPDATE USER --- NEED ADD
+ 
+// RENDER
 
 ###
 GET https://cserebolloproject.onrender.com/list 
