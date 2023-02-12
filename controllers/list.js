@@ -46,9 +46,10 @@ const updateList = async(req, res) => {
                 //city: state: task: date: listToDo:
         };
 
-        const listUpdated = await modelUser.collection.findAndModify(newList);
+        const userID = await modelUser.findById(req.params.id);
+        const listUpdated = await modelUser.updateOne(newList);
         if (listUpdated) {
-            res.status(201).json(listUpdated || 'sucess');
+            res.status(201).json(listUpdated || 'success');
         } else {
 
             res.status(500).json(listCreated.error || 'error occurred while creating a new user');
