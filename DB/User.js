@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const list = new Schema({
+const schema = new Schema({
     fullName: {
         type: String
     },
@@ -27,4 +27,4 @@ const list = new Schema({
 
 
 
-module.exports = User = mongoose.model('User', list);
+module.exports = User = mongoose.model('Project', schema);

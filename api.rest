@@ -5,16 +5,21 @@ GET http://localhost:3000/list
 GET http://localhost:3000/list/63ddfc20cbde21ce9d9e0ca0
 
 ### 
-POST http://localhost:3000/
+POST http://localhost:3000/list HTTP/1.1
+Content-Type: application/json
+
 {
-"fullName": "ELENAMARIA",
-"city": "Denver", 
-"state": "Colorado",
-"task": "organizing",
-"date": "03/25/2022",
-"listToDo": "business applications, work, lunch date"
+"fullName": "Denise Rebollo",
+"city": "Albuquerque", 
+"state": "New Mexico",
+"task": "Work",
+"date": "02/10/2022",
+"listToDo": "Clean, restroom, trash, homework"
 }
 // RENDER
+
+
+
 
 ###
 GET https://cserebolloproject.onrender.com/list 
