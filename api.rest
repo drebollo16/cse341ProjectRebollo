@@ -19,8 +19,23 @@ Content-Type: application/json
 // RENDER
 
 //UPDATE USER --- NEED ADD
- 
-// RENDER
+### 
+PUT http://localhost:3000/list/63e841fc3cbf76a5490b72ab HTTP/1.1
+Content-Type: application/json
+
+{
+"fullName": "Alfredo Rebollo valencia",
+"city": "Albuquerque", 
+"state": "New Mexico",
+"task": "completed",
+"date": "02/11/2022",
+"listToDo": "trailer lights"
+}
+
+//Delete user task list
+###
+POST http://localhost:3000/list/63e815851c0ad2039a52e39d HTTP/1.1
+
 
 ###
 GET https://cserebolloproject.onrender.com/list 
