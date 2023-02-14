@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     fullName: {
-        type: String
+        type: String,
+        required: true,
     },
     city: {
         type: String,
@@ -16,7 +17,10 @@ const schema = new Schema({
         type: String
     },
     date: {
-        type: Date
+        type: Date,
+        required: true,
+        default: new Date(),
+
     },
     listToDo: {
         type: String

@@ -9,8 +9,8 @@ POST http://localhost:3000/list HTTP/1.1
 Content-Type: application/json
 
 {
-"fullName": "Elena Rebollo",
-"city": "Albuquerque", 
+"fullName": "isabella Rebollo",
+"city": "Albs", 
 "state": "New Mexico",
 "task": "Home Work",
 "date": "02/10/2022",
@@ -20,21 +20,21 @@ Content-Type: application/json
 
 //UPDATE USER --- NEED ADD
 ### 
-PUT http://localhost:3000/list/63e841fc3cbf76a5490b72ab HTTP/1.1
+PUT http://localhost:3000/list/63e86f737b4e2bbd11d28e0e HTTP/1.1
 Content-Type: application/json
 
 {
-"fullName": "Alfredo Rebollo",
+"fullName": "Maxes Rebollo",
 "city": "Albuquerque", 
 "state": "New Mexico",
 "task": "completed",
-"date": "02/11/2022",
+"date": "",
 "listToDo": "trailer lights"
 }
 
 //Delete user task list
 ###
-DELETE http://localhost:3000/list/63e86dc66f6b6ac542f7747c HTTP/1.1
+DELETE http://localhost:3000/list/63e86f737b4e2bbd11d28e0e HTTP/1.1
 
 
 ###
