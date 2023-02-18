@@ -48,6 +48,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "newList": {
+                  "example": "any"
+                },
                 "fullName": {
                   "example": "any"
                 },

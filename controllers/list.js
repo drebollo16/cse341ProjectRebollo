@@ -16,29 +16,27 @@ async function getOneId(req, res) {
 
 const createList = async(req, res) => {
     try {
-        const newList = {
-            fullName: req.body.fullName,
-            city: req.body.city,
-            state: req.body.state,
-            task: req.body.task,
-            date: req.body.date,
-            listToDo: req.body.listToDo
-                //city: state: task: date: listToDo:
-        };
-
-        if (req.body.date == "") {
-            res.status(500).json('Can not be empty')
+        if (!req.body.newList) {
+            res.status(500).json('Can not be empty');
             return;
-        }
-        const listCreated = await modelUser.collection.insertOne(newList);
-        if (listCreated) {
-            res.status(201).json(listCreated || 'sucess');
         } else {
 
-            res.status(500).json(listCreated.error || 'error occurred while creating a new user');
+            const newList = {
+                fullName: req.body.fullName,
+                city: req.body.city,
+                state: req.body.state,
+                task: req.body.task,
+                date: req.body.date,
+                listToDo: req.body.listToDo
+                    //city: state: task: date: listToDo:
+            };
+            const listCreated = await modelUser.collection.insertOne(newList);
+            listCreated;
+            res.status(201).json(listCreated || 'success');
         }
+
     } catch (error) {
-        res.status(500).json('Some happened while creating new list')
+        res.status(500).json('Somethiing happened while creating new list')
     }
 }
 
@@ -57,7 +55,7 @@ const updateList = async(req, res) => {
         };
 
         const userID = await modelUser.findById(req.params.id);
-        const listUpdated = await modelUser.updateOne(newList);
+        const listUpdated = await modelUser.replaceOne(newList, userID);
         if (listUpdated) {
             res.status(204).json(listUpdated || 'success');
         } else {

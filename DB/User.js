@@ -18,8 +18,7 @@ const schema = new Schema({
     },
     date: {
         type: Date,
-        required: true,
-        default: new Date(),
+        required: true
 
     },
     listToDo: {
