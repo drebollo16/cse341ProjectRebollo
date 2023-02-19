@@ -9,9 +9,9 @@ POST http://localhost:3000/list HTTP/1.1
 Content-Type: application/json
 
 {
-"fullName": "Denise Marie Rebollo",
+"fullName": "Denise M Rebollo",
 "city": "Albuquerque", 
-"state": "",
+"state": "NM",
 "task": "Home Work",
 "date": "02/26/2023",
 "listToDo": "Spanish, Math, Reading"
@@ -24,12 +24,12 @@ PUT http://localhost:3000/list/63f06d3ab351ace76a84ca4d HTTP/1.1
 Content-Type: application/json
 
 {
-"fullName": "Denise23 Rebollo",
-"city": "", 
+"fullName": "Alfredo Rebollo",
+"city": "Gallup", 
 "state": "New Mexico",
-"task": "completed",
-"date": "02/15/2023",
-"listToDo": "trailer lights"
+"task": "Uncompleted",
+"date": "02/20/2023",
+"listToDo": "Applications, tax documents, truck repairs"
 }
 
 //Delete user task list

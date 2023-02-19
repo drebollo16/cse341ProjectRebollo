@@ -21,6 +21,7 @@ async function getOneId(req, res) {
 const createList = async(req, res) => {
     try {
 
+
         if (!req.body.fullName) {
             res.status(400).send({ message: 'Required Can not be empty! Enter full name' });
             return;
@@ -40,11 +41,6 @@ const createList = async(req, res) => {
         if (!req.body.date) {
             res.status(400).send({ message: 'Required! Can not be empty! Enter DATE!' });
             return;
-        }
-        if (req.body.fullName == req.body.fullName) {
-            res.status(400).send({ message: 'Can not user same' });
-            return;
-
         } else {
 
             const newList = {
@@ -71,54 +67,52 @@ const createList = async(req, res) => {
 //create new list user
 const updateList = async(req, res) => {
 
-
-
-        if (!req.body.fullName) {
-            res.status(400).send({ message: 'Missing Full Name!' });
-            return;
-        }
-
-
-        if (!req.body.city) {
-            res.status(400).send({ message: 'Missing city!' });
-            return;
-        }
-
-        if (!req.body.state) {
-            res.status(400).send({ message: 'Missing State' });
-            return;
-        }
-
-        if (!req.body.date) {
-            res.status(400).send({ message: 'Missing DATE!' });
-            return;
-        }
-        if (req.body.fullName == req.body.fullName) {
-            res.status(400).send({ message: 'Can not be the same user same' });
-            return;
-        }
-
-
-        const newList = {
-            fullName: req.body.fullName,
-            city: req.body.city,
-            state: req.body.state,
-            task: req.body.task,
-            date: req.body.date,
-            listToDo: req.body.listToDo
-                //city: state: task: date: listToDo:
-        };
-
-        const userID = await modelUser.findById(req.params.id);
-        const listUpdated = await modelUser.replaceOne(newList, userID);
-        if (listUpdated) {
-            res.status(204).json(listUpdated || 'success');
-        } else {
-
-            res.status(500).json(listCreated.error || 'error occurred while creating a new user');
-        }
+    if (!req.body.fullName) {
+        res.status(400).send({ message: 'Missing Full Name!' });
+        return;
     }
-    //delete user by _id
+
+
+    if (!req.body.city) {
+        res.status(400).send({ message: 'Missing city!' });
+        return;
+    }
+
+    if (!req.body.state) {
+        res.status(400).send({ message: 'Missing State' });
+        return;
+    }
+
+    if (!req.body.date) {
+        res.status(400).send({ message: 'Missing DATE!' });
+        return;
+    }
+
+    const newList = {
+        fullName: req.body.fullName,
+        city: req.body.city,
+        state: req.body.state,
+        task: req.body.task,
+        date: req.body.date,
+        listToDo: req.body.listToDo
+            //city: state: task: date: listToDo:
+    };
+
+    const userID = await modelUser.findById(req.params.id);
+    const listUpdated = await modelUser.updateMany(userID, newList);
+    if (listUpdated) {
+        //res.status(204).json(listUpdated);
+        res.status(200).send({ message: 'Successful user updated!' });
+
+    } else {
+
+        res.status(500).json(listUpdated.error || 'error occurred while creating a new user');
+    }
+}
+
+
+
+//delete user by _id
 const deleteUser = async(req, res) => {
     const UserId = await modelUser.findByIdAndDelete(req.params.id);
     const update = await modelUser.deleteOne(UserId);
