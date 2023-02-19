@@ -48,9 +48,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "newList": {
-                  "example": "any"
-                },
                 "fullName": {
                   "example": "any"
                 },
@@ -60,10 +57,10 @@
                 "state": {
                   "example": "any"
                 },
-                "task": {
+                "date": {
                   "example": "any"
                 },
-                "date": {
+                "task": {
                   "example": "any"
                 },
                 "listToDo": {
@@ -76,6 +73,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"
@@ -124,10 +124,10 @@
                 "state": {
                   "example": "any"
                 },
-                "task": {
+                "date": {
                   "example": "any"
                 },
-                "date": {
+                "task": {
                   "example": "any"
                 },
                 "listToDo": {
@@ -140,6 +140,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"

@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const modelUser = require('../DB/User');
 
 
+
+
 const getallList = async(req, res) => {
     const result = await modelUser.find();
     res.json(result);
@@ -12,13 +14,37 @@ async function getOneId(req, res) {
     res.json(result1);
 }
 
+
+
 //create new list user
 
 const createList = async(req, res) => {
     try {
-        if (!req.body.newList) {
-            res.status(500).json('Can not be empty');
+
+        if (!req.body.fullName) {
+            res.status(400).send({ message: 'Required Can not be empty! Enter full name' });
             return;
+        }
+
+
+        if (!req.body.city) {
+            res.status(400).send({ message: 'Can not be empty! Enter city!' });
+            return;
+        }
+
+        if (!req.body.state) {
+            res.status(400).send({ message: 'Required! Can not be empty Enter State' });
+            return;
+        }
+
+        if (!req.body.date) {
+            res.status(400).send({ message: 'Required! Can not be empty! Enter DATE!' });
+            return;
+        }
+        if (req.body.fullName == req.body.fullName) {
+            res.status(400).send({ message: 'Can not user same' });
+            return;
+
         } else {
 
             const newList = {
@@ -44,6 +70,15 @@ const createList = async(req, res) => {
 /**Need to add edit delete list */
 //create new list user
 const updateList = async(req, res) => {
+
+
+
+        if (!req.body.fullName || !req.body.city || !req.body.state || !req.body.date) {
+            res.status(400).send({ message: 'Required! Can not be empty (UPDATE)' });
+            return;
+        }
+
+
         const newList = {
             fullName: req.body.fullName,
             city: req.body.city,
