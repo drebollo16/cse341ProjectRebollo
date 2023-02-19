@@ -25,7 +25,7 @@ Content-Type: application/json
 
 {
 "fullName": "Denise23 Rebollo",
-"city": "Albuquerque", 
+"city": "", 
 "state": "New Mexico",
 "task": "completed",
 "date": "02/15/2023",

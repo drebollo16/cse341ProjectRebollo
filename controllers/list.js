@@ -73,8 +73,28 @@ const updateList = async(req, res) => {
 
 
 
-        if (!req.body.fullName || !req.body.city || !req.body.state || !req.body.date) {
-            res.status(400).send({ message: 'Required! Can not be empty (UPDATE)' });
+        if (!req.body.fullName) {
+            res.status(400).send({ message: 'Missing Full Name!' });
+            return;
+        }
+
+
+        if (!req.body.city) {
+            res.status(400).send({ message: 'Missing city!' });
+            return;
+        }
+
+        if (!req.body.state) {
+            res.status(400).send({ message: 'Missing State' });
+            return;
+        }
+
+        if (!req.body.date) {
+            res.status(400).send({ message: 'Missing DATE!' });
+            return;
+        }
+        if (req.body.fullName == req.body.fullName) {
+            res.status(400).send({ message: 'Can not be the same user same' });
             return;
         }
 
