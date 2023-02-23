@@ -99,15 +99,18 @@ const updateList = async(req, res) => {
     };
 
     const userID = await modelUser.findById(req.params.id);
-    const listUpdated = await modelUser.updateMany(userID, newList);
-    if (listUpdated) {
-        //res.status(204).json(listUpdated);
+    const listUpdated = await modelUser.findOneAndUpdate(userID, newList);
+    listUpdated;
+    /*
+    if (update.acknowledged) {
+        res.status(204).json(listUpdated);
         res.status(200).send({ message: 'Successful user updated!' });
 
     } else {
 
         res.status(500).json(listUpdated.error || 'error occurred while creating a new user');
     }
+    */
 }
 
 
@@ -115,12 +118,13 @@ const updateList = async(req, res) => {
 //delete user by _id
 const deleteUser = async(req, res) => {
     const UserId = await modelUser.findByIdAndDelete(req.params.id);
-    const update = await modelUser.deleteOne(UserId);
+    const deletedId = await modelUser.deleteOne(UserId);
+    deletedId;
 
-    if (update.acknowledged) {
-        res.status(200).json(update || 'deleted');
+    if (deletedId) {
+        res.status(200).json(deletedId || 'deleted');
     } else {
-        res.status(500).json(update.error || 'error happened while deleting user.');
+        res.status(500).json(deletedId.error || 'error happened while deleting user.');
     }
 
 }

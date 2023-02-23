@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
     fullName: {
         type: String,
-        required: true,
+        required: true
     },
     city: {
-        type: String,
+        type: String
     },
     state: {
         type: String
