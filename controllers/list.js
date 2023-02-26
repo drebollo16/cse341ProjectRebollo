@@ -123,13 +123,12 @@ const updateList = async(req, res) => {
 //delete user by _id
 const deleteUser = async(req, res) => {
     const UserId = await modelUser.findById(req.params.id);
-    const deletedId = await modelUser.deleteMany(UserId);
-    deletedId;
-
-    if (deletedId) {
-        res.status(200).json(deletedId || 'deleted');
+    const result1 = await modelUser.findByIdAndDelete(UserId);
+    result1;
+    if (result1) {
+        res.status(200).json({message: 'deleted'});
     } else {
-        res.status(500).json(deletedId.error || 'error happened while deleting user.');
+        res.status(500).json({message: 'error happened while deleting user.'});
     }
 
 }
