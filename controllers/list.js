@@ -1,3 +1,4 @@
+const { UnorderedBulkOperation } = require('mongodb');
 const mongoose = require('mongoose');
 const modelUser = require('../DB/User');
 
@@ -13,7 +14,6 @@ async function getOneId(req, res) {
     const result1 = await modelUser.findById(req.params.id);
     res.json(result1);
 }
-
 
 
 //create new list user
@@ -98,27 +98,32 @@ const updateList = async(req, res) => {
             //city: state: task: date: listToDo:
     };
 
-    const userID = await modelUser.findById(req.params.id);
-    const listUpdated = await modelUser.findOneAndUpdate(userID, newList);
-    listUpdated;
-    /*
-    if (update.acknowledged) {
-        res.status(204).json(listUpdated);
+
+    const id_change = {
+        _id:req.body.id
+    }
+
+    const result1 = await modelUser.findById(req.params.id);
+    const update_user =await modelUser.findByIdAndUpdate(result1, newList);
+
+    //res.json(update_user);
+        if (update_user) {
+       
         res.status(200).send({ message: 'Successful user updated!' });
 
     } else {
 
-        res.status(500).json(listUpdated.error || 'error occurred while creating a new user');
+        res.status(500).json('error occurred while creating a new user');
     }
-    */
+    
 }
 
 
 
 //delete user by _id
 const deleteUser = async(req, res) => {
-    const UserId = await modelUser.findByIdAndDelete(req.params.id);
-    const deletedId = await modelUser.deleteOne(UserId);
+    const UserId = await modelUser.findById(req.params.id);
+    const deletedId = await modelUser.deleteMany(UserId);
     deletedId;
 
     if (deletedId) {
